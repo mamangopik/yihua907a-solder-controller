@@ -10,7 +10,7 @@ void enc_read(void *param)
     skp = (double)EEPROM.readFloat(8);
     ski = (double)EEPROM.readFloat(16);
     skd = (double)EEPROM.readFloat(24);
-    control_mode = EEPROM.read(26);
+    control_mode = EEPROM.read(28);
 
     while (1)
     {
@@ -67,7 +67,7 @@ void enc_read(void *param)
                     if (layer == 2 && menu_pos == 6)
                     {
                         layer = 1;
-                        EEPROM.write(26, control_mode);
+                        EEPROM.write(28, control_mode);
                         EEPROM.commit();
                         control_param_change = 1;
                     }
